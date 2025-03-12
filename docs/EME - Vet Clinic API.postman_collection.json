@@ -280,6 +280,73 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "Create doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Dr. John Doe\",\n  \"phone\": \"01245789865\",\n  \"photo\": \"https://example.com/drjohn.jpg\",\n  \"bio\": \"Experienced vet specializing in cats and dogs\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/v1/doctors",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch doctor by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Dr. John Doe\",\n  \"phone\": \"01245789865\",\n  \"photo\": \"https://example.com/drjohn.jpg\",\n  \"bio\": \"Experienced vet specializing in cats and dogs\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/v1/doctors/16",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"doctors",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"variable": [

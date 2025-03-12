@@ -1,8 +1,5 @@
 package com.vetclinic.api.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -12,8 +9,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class DoctorDto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "Name is required")
@@ -21,7 +16,7 @@ public class DoctorDto {
     private String name;
 
     @NotBlank(message = "Phone is required")
-    @Pattern(regexp = "\\+?[0-9]{10,15}", message = "Invalid phone number format")
+    @Pattern(regexp = "^01[0-25]\\d{8}$", message = "Invalid phone number format")
     private String phone;
 
     private String photo;
