@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "5bfe8283-22d1-48a0-82cd-69e2b6f330ac",
+		"name": "EME - Vet Clinic API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22612555"
+	},
+	"item": [
+		{
+			"name": "Clinic",
+			"item": [
+				{
+					"name": "Create Clinic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"El-Safaa\",\n  \"address\": \"123 Main Street, Cairo, Egypt\",\n  \"phone\": \"01010101010\",\n  \"email\": \"contact@elsafaa.com\",\n  \"workingHours\": [\n        { \"day\": \"WEDNESDAY\", \"startTime\": \"09:00\", \"endTime\": \"18:00\" },\n        { \"day\": \"MONDAY\", \"startTime\": \"09:00\", \"endTime\": \"18:00\" }\n    ],\n  \"socialNetworks\": [\n    \"https://www.facebook.com/ElsafaaVetClinic\",\n    \"https://www.instagram.com/ElsafaaVetClinic\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/v1/clinics",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"clinics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch clinic by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/clinics/29",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"clinics",
+								"29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch clinic doctors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/clinics/29/doctors",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"clinics",
+								"29",
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinic search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/clinics?address=GIZA&phone=01010101010",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"clinics"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "GIZA"
+								},
+								{
+									"key": "phone",
+									"value": "01010101010"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign/Unassign clinic doctor",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Healthy Paws Veterinary Clinic\",\n  \"address\": \"123 Main Street, Cairo, Egypt\",\n  \"phone\": \"01234567890\",\n  \"email\": \"contact@healthypaws.com\",\n  \"workingHours\": [\n    \"Sunday: 9 AM - 6 PM\",\n    \"Monday: 9 AM - 6 PM\",\n    \"Tuesday: 9 AM - 6 PM\",\n    \"Wednesday: 9 AM - 6 PM\",\n    \"Thursday: 9 AM - 6 PM\"\n  ],\n  \"socialNetworks\": [\n    \"https://www.facebook.com/HealthyPawsVet\",\n    \"https://www.instagram.com/HealthyPawsVet\"\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/v1/clinics/29/doctors/2/assign",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"clinics",
+								"29",
+								"doctors",
+								"2",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
