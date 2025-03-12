@@ -37,11 +37,9 @@ public class ClinicDto {
     @NotEmpty(message = "Working hours is required")
     private List<WorkingHoursDto> workingHours;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<String> socialNetworks;
+    private List<String> socialNetworks = List.of();
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<Doctor> doctors;
+    private List<Doctor> doctors = List.of();
 
     @Override
     public String toString() {

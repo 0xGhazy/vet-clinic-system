@@ -10,7 +10,7 @@
 			"name": "Clinic",
 			"item": [
 				{
-					"name": "Create Clinic",
+					"name": "Create clinic",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -148,6 +148,144 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Owner",
+			"item": [
+				{
+					"name": "Create owner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"phone\": \"01234563890\",\n  \"gender\": \"MALE\",\n  \"address\": \"123 Main St, City, Country\",\n  \"pets\": [\n    {\n      \"name\": \"Buddy\",\n      \"gender\": \"MALE\",\n      \"dateOfBirth\": \"2020-05-15\",\n      \"animalKind\": \"Dog\",\n      \"photos\": [\n        \"https://example.com/images/buddy1.jpg\",\n        \"https://example.com/images/buddy2.jpg\"\n      ],\n      \"weight\": 10.5\n    },\n    {\n      \"name\": \"Whiskers\",\n      \"gender\": \"FEMALE\",\n      \"dateOfBirth\": \"2021-08-20\",\n      \"animalKind\": \"Cat\",\n      \"photos\": [\n        \"https://example.com/images/whiskers1.jpg\"\n      ],\n      \"weight\": 4.2\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/v1/owners",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch owner by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/owners/10",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"owners",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch owner pets by owner id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/owners/10/pets",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"owners",
+								"10",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Create pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Qatosa\",\n    \"gender\": \"FEMALE\",\n    \"dateOfBirth\": \"2021-08-20\",\n    \"animalKind\": \"Cat\",\n    \"photos\": [\n        \"https://example.com/images/whiskers1.jpg\"\n    ],\n    \"weight\": 4.5,\n    \"owner\": {\n        \"id\": 10\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/v1/pets",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch pet by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/pets/18",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"pets",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "PET-ID",
+			"value": "18"
 		}
 	]
 }

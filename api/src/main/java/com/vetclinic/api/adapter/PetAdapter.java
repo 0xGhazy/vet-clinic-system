@@ -1,7 +1,7 @@
 package com.vetclinic.api.adapter;
 
-import com.vetclinic.api.dto.DoctorDto;
-import com.vetclinic.api.entity.Doctor;
+import com.vetclinic.api.dto.PetDto;
+import com.vetclinic.api.entity.Pet;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -11,18 +11,19 @@ import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
-public class DoctorAdapter {
+public class PetAdapter {
+
     private final ModelMapper mapper;
 
-    public DoctorDto toDto(Doctor entity) {
-        return mapper.map(entity, DoctorDto.class);
+    public PetDto toDto(Pet entity) {
+        return mapper.map(entity, PetDto.class);
     }
 
-    public Doctor toEntity(DoctorDto dto) {
-        return mapper.map(dto, Doctor.class);
+    public Pet toEntity(PetDto dto) {
+        return mapper.map(dto, Pet.class);
     }
 
-    public List<DoctorDto> toDtoList(List<Doctor> entities) {
+    public List<PetDto> toDtoList(List<Pet> entities) {
         return entities.stream().map(this::toDto).collect(Collectors.toList());
     }
 

@@ -1,8 +1,6 @@
 package com.vetclinic.api.adapter;
 
-import com.vetclinic.api.dto.DoctorDto;
 import com.vetclinic.api.dto.WorkingHoursDto;
-import com.vetclinic.api.entity.Doctor;
 import com.vetclinic.api.entity.WorkingHours;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

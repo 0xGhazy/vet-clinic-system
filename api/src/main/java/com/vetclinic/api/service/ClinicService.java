@@ -19,9 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -71,7 +69,7 @@ public class ClinicService {
                 throw new BadRequest("Clinic phone is already exist");
             }
             log.error("Error while creating clinic in db, ex={}", ex.getMessage());
-            return new ResponseEntity<>("", HttpStatus.INTERNAL_SERVER_ERROR);
+            throw new InternalServerError("Unexpected error occur");
         }
     }
 
