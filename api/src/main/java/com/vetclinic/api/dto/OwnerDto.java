@@ -1,8 +1,6 @@
 package com.vetclinic.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.vetclinic.api.entity.Pet;
 import com.vetclinic.api.enums.Gender;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;

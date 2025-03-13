@@ -10,7 +10,7 @@ import java.time.LocalTime;
 @Setter
 @Getter
 public class WorkingHoursDto {
-    @Pattern(regexp = "(?i)^(SUNDAY|MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY)$",
+    @Pattern(regexp = "^(SUNDAY|MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY)$",
             message = "Invalid day name. Must be a valid weekday.")
     @NotBlank(message = "Day is required")
     private String day;
